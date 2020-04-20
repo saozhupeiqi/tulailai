@@ -16,3 +16,7 @@ class UserLogin(unittest.TestCase):
 
     def tearDown(self):
         print('测试用例执行完成...')
+
+    def test_login_ok(self):
+        '''登陆成功'''
+        
