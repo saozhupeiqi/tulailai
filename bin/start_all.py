@@ -2,8 +2,8 @@
 import os
 import sys
 
+# 把path加入环境变量，0表示在最前面
 path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#把path加入环境变量，0表示在最前面
 sys.path.insert(0,path)
 from conf.settings import TESTCASE_PATH
 from conf.settings import TESTREPORT_PATH
