@@ -15,7 +15,7 @@ print(suit)
 if __name__ == "__main__":
     now = time.strftime("%Y-%M-%D-%H-%M-%S")#获取当前时间，并指定输出格式
     #创建报告文件
-    fp = open(TESTREPORT_PATH+'_report_all.html','wb')
+    fp = open(TESTREPORT_PATH+'_report_all.html', 'wb')
 
     runner = hr2(
         stream=fp,

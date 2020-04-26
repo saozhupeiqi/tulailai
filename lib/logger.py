@@ -11,6 +11,7 @@ class Logger(object):
         if not cls.__instance:
             cls.__instance = object.__new__()
             return cls.__instance
+
     def __init__(self):
         self.formatter = logging.Formatter(
             '[%(asctime)s] [%(levelname)s] [%(pathname)s] : %(funcName)s:%(lineno)d , %(message)s'
@@ -28,5 +29,7 @@ class Logger(object):
         self.logger.addHandler(self.console)
 
 logger = Logger()
+
+
 if __name__ == '__main__':
     logger.logger.debug('http://www.cnblogs.com/uncleyong/')
