@@ -1,6 +1,6 @@
 import sys,os
 path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.insert(0, path)
+sys.path.insert(0, path)
 import requests
 import unittest
 from lib import HTMLTestRunner

@@ -27,18 +27,18 @@ class AddUser(unittest.TestCase):
     def test_add_user_ok(self):
         """添加成功"""
         logger.logger.logger.debug('当前方法【%s】:' % p.get_current_function_name())
-        payload = {"token":self.token,
-                   "username":"test133",
-                   "realname":"test133",
-                   "sex":"1",
-                   "phone":"17781780161",
-                   "adduser":"qzcsbj"}
+        payload = {"token": self.token,
+                   "username": "test133",
+                   "realname": "test133",
+                   "sex": "1",
+                   "phone": "17781780161",
+                   "adduser": "qzcsbj"}
         try:
-            res = requests.post(url=self.url,json=payload,headers=self.headers).json()
+            res = requests.post(url=self.url, json=payload, headers=self.headers).json()
         except Exception as e:
             res = {
-                'code':'999',
-                'msg':'连接错误'
+                'code': '999',
+                'msg': '连接错误'
             }
         logger.logger.logger.debug('是测试点【%s】下用例【%s:%s】,返回结果【%s】'
                                    %(self.__class__.__name__,
@@ -55,17 +55,17 @@ class AddUser(unittest.TestCase):
                    "phone": "17781780161",
                    "adduser": "qzcsbj"}
         try:
-            res = requests.post(url=self.url,json=payload,headers=self.headers).json()
+            res = requests.post(url=self.url, json=payload, headers=self.headers).json()
         except Exception as e:
             res = {
                 'code':'999',
                 'msg':'连接错误'
             }
         logger.logger.logger.debug('是测试点【%s】下用例【%s:%s】,返回结果【%s】'
-                                   %(self.__class__.__name__,
+                                   % (self.__class__.__name__,
                                      getattr(self,p.get_current_function_name()).__doc__,
-                                     p.get_current_function_name(),res))
-        self.assertEqual(res['code'],9360)
+                                      p.get_current_function_name(), res))
+        self.assertEqual(res['code'], 9360)
 
     def test_add_user_no_phone(self):
         """手机号为空"""

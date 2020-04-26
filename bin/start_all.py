@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-
 # 把path加入环境变量，0表示在最前面
 path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0,path)
+sys.path.insert(0, path)
 from conf.settings import TESTCASE_PATH
 from conf.settings import TESTREPORT_PATH
 import unittest
 from lib.HTMLTestReportCN import HTMLTestRunner as hr1
 from lib.HTMLTestReportCN import HTMLTestRunner as hr2
 import time
-suit = unittest.defaultTestLoader.discover(TESTCASE_PATH,pattern='test_*.py')
+suit = unittest.defaultTestLoader.discover(TESTCASE_PATH, pattern='test_*.py')
 print(suit)
 if __name__ == "__main__":
     now = time.strftime("%Y-%M-%D-%H-%M-%S")#获取当前时间，并指定输出格式
