@@ -23,6 +23,8 @@ class UserReg(unittest.TestCase):
 
     def test_user_reg_no_phone(self):
         """手机号为空"""
+        pass
+
 
 
 if __name__ == '__main__':
@@ -30,8 +32,8 @@ if __name__ == '__main__':
     suit.addTest(UserReg('test_user_reg_ok'))
     suit.addTest(UserReg('test_user_reg_exsit'))
     suit.addTest(UserReg('test_user_reg_no_phone'))
-    fp = open('/report_debug.html','wb')
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'自动化测试项目报告',description=u'自动化测试项目报告')
+    fp = open('/report_debug.html', 'wb')
+    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'自动化测试项目报告', description=u'自动化测试项目报告')
     runner.run(suit)
     fp.close()
 

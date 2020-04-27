@@ -5,11 +5,13 @@ import logging
 from logging import handlers
 from conf.settings import LOG_PATH
 
+
 class Logger(object):
     __instance = None
+
     def __new__(cls, *args, **kwargs):
         if not cls.__instance:
-            cls.__instance = object.__new__()
+            cls.__instance = object.__new__(cls, *args)
             return cls.__instance
 
     def __init__(self):
@@ -28,8 +30,8 @@ class Logger(object):
         self.logger.addHandler(self.filelogger)
         self.logger.addHandler(self.console)
 
-logger = Logger()
 
+logger = Logger()
 
 if __name__ == '__main__':
     logger.logger.debug('http://www.cnblogs.com/uncleyong/')

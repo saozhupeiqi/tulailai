@@ -1,0 +1,6 @@
+[2020-04-26 15:03:39,085] [DEBUG] [D:\PyDemo\tulailai\test_case\test_add_user.py] : test_add_user_ok:29 , 当前方法【test_add_user_ok】:
+[2020-04-26 15:03:40,109] [DEBUG] [D:\PyDemo\tulailai\test_case\test_add_user.py] : test_add_user_ok:46 , 是测试点【AddUser】下用例【添加成功:test_add_user_ok】,返回结果【{'code': '999', 'msg': '连接错误'}】
+[2020-04-26 15:13:59,709] [DEBUG] [D:\PyDemo\tulailai\test_case\test_add_user.py] : test_add_user_ok:29 , 当前方法【test_add_user_ok】:
+[2020-04-26 15:14:00,715] [DEBUG] [D:\PyDemo\tulailai\test_case\test_add_user.py] : test_add_user_ok:46 , 是测试点【AddUser】下用例【添加成功:test_add_user_ok】,返回结果【{'code': '999', 'msg': '连接错误'}】
+[2020-04-26 15:16:15,257] [DEBUG] [D:\PyDemo\tulailai\test_case\test_add_user.py] : test_add_user_ok:29 , 当前方法【test_add_user_ok】:
+[2020-04-26 15:16:16,264] [DEBUG] [D:\PyDemo\tulailai\test_case\test_add_user.py] : test_add_user_ok:46 , 是测试点【AddUser】下用例【添加成功:test_add_user_ok】,返回结果【{'code': '999', 'msg': '连接错误'}】

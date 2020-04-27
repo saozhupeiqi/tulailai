@@ -17,9 +17,9 @@ class AddUser(unittest.TestCase):
         self.url = 'http://' + PROJECT_IP + ':' + PROJECT_PORT + '/add_user4'
         # 获取token
         from lib import login_token
-        self.token = login_token.get_token('qzcsbj','123456')
+        self.token = login_token.get_token('qzcsbj', '123456')
         print(self.token)
-        self.headers = {'content-type':'application/json'}
+        self.headers = {'content-type': 'application/json'}
 
     def tearDown(self):
         print('...测试用例执行完毕...')
@@ -34,7 +34,7 @@ class AddUser(unittest.TestCase):
                    "phone": "17781780161",
                    "adduser": "qzcsbj"}
         try:
-            res = requests.post(url=self.url, json=payload, headers=self.headers).json()
+            res = requests.post(url=self.url, params=payload, headers=self.headers).json()
         except Exception as e:
             res = {
                 'code': '999',
@@ -55,7 +55,7 @@ class AddUser(unittest.TestCase):
                    "phone": "17781780161",
                    "adduser": "qzcsbj"}
         try:
-            res = requests.post(url=self.url, json=payload, headers=self.headers).json()
+            res = requests.post(url=self.url, params=payload, headers=self.headers).json()
         except Exception as e:
             res = {
                 'code':'999',
@@ -63,22 +63,22 @@ class AddUser(unittest.TestCase):
             }
         logger.logger.logger.debug('是测试点【%s】下用例【%s:%s】,返回结果【%s】'
                                    % (self.__class__.__name__,
-                                     getattr(self,p.get_current_function_name()).__doc__,
+                                      getattr(self, p.get_current_function_name()).__doc__,
                                       p.get_current_function_name(), res))
         self.assertEqual(res['code'], 9360)
 
     def test_add_user_no_phone(self):
         """手机号为空"""
         payload = {"token": self.token, "username": "test131", "realname": "test131", "sex": "1",
-                   "phone": "", "adduser": "qzcsbj"}
+                   "phone": " ", "adduser": "qzcsbj"}
         try:
-            res = requests.post(url=self.url,json=payload,headers=self.headers).json()
+            res = requests.post(url=self.url, params=payload, headers=self.headers).json()
         except Exception as e:
             res = {
-                'code':'999',
-                'msg':'连接错误'
+                'code': '999',
+                'msg': '连接错误'
             }
-        self.assertEqual(res['code'],9500)
+        self.assertEqual(res['code'], 9500)
 
 
 if __name__ == '__main__':
@@ -86,8 +86,8 @@ if __name__ == '__main__':
     suit.addTest(AddUser('test_add_user_ok'))
     suit.addTest(AddUser('test_add_user_exist'))
     suit.addTest(AddUser('test_add_user_no_phone'))
-    fp = open('./report_debug.html','wb')
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'接口测试报告',description=u'接口测试报告')
+    fp = open('./report_debug.html', 'wb')
+    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'接口测试报告', description=u'接口测试报告')
     runner.run(suit)
     fp.close()
 
