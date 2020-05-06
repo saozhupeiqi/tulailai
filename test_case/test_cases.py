@@ -42,7 +42,7 @@ class MyRequest(unittest.TestCase):
             pass
         if method.upper() == 'GET':
             try:
-                res = request.get(url=url, headers=headers_, cookies=cookies_,params=params_, timeout=90)
+                res = request.get(url=url, headers=headers_, cookies=cookies_,params=params_, timeout=10)
                 logger.logger.debug("执行请求后，结果是：%s" % res.text)
                 # 如果有需要被后续请求用的变量
                 if globalVariable:
@@ -60,6 +60,24 @@ class MyRequest(unittest.TestCase):
                 raise e
 
         if method.upper == 'POST':
+            """执行请求"""
+            try:
+                res = request.post(url=url, headers=headers_,cookies=cookies_,params=params_,json=body_,timeout=10)
+                logger.logger.debug("执行请求后结果是：%s" %res.text)
+                if globalVariable:
+                    gv.save_global_variable(globalVariable,res.text)
+
+                if assertRes:
+                    res_status = assert_res(assertRes,res.text)
+                    logger.logger.debug("断言结果是：%s" %res_status)
+                    gv.res.append([res.text, url,headers, cookies, params, body, res_status])
+                    self.assertEqual(res_status, 'pass')
+            except Exception as e:
+                print('出错了 %s' % e)
+                raise e
+
+if __name__ == '__main__':
+    pass
 
 
 
