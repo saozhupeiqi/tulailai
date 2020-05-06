@@ -13,7 +13,7 @@ host_info = {
 }
 
 # 当前sheet名
-Sheet = 'Sheet01'
+SHEET_NAME = 'Sheet01'
 # sheet名及索引
 Sheet_INFO = {
     'Sheet': 0
