@@ -76,6 +76,7 @@ class MyRequest(unittest.TestCase):
                 print('出错了 %s' % e)
                 raise e
 
+
 if __name__ == '__main__':
     pass
 
