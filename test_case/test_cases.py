@@ -7,6 +7,7 @@ from lib.global_variables import gv
 from lib.assert_res import assert_res
 from lib.read_excel import read_excel
 from lib.logger import logger
+from lib import HTMLTestRunner
 
 
 @ddt
@@ -78,10 +79,9 @@ class MyRequest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    pass
-
-
-
-
-
-
+    suit = unittest.TestSuite()
+    suit.addTest(MyRequest('test_my-request'))
+    fp = open('./report_debug.html', 'wb')
+    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'自动化测试报告', description=u'自动化测试报告')
+    runner.run(suit)
+    fp.close()

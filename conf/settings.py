@@ -7,9 +7,9 @@ LOG_PATH = os.path.join(BATH_PATH, 'log/log.txt')  # 指定日志路径
 DATA_PATH = os.path.join(BATH_PATH, 'data')  # 指定测试数据路径
 # 项目环境
 host_info = {
-    'test': 'http://127.0.0.1',
-    'dev': 'http://127.0.0.1',
-    'preProduc': 'http://127.0.0.1'
+    'test': 'http://127.0.0.1:9999',
+    'dev': 'http://127.0.0.1:9999',
+    'preProduc': 'http://127.0.0.1:9999'
 }
 
 # 当前sheet名
@@ -31,6 +31,6 @@ MySQL_DB_NAME = 'mysql'
 redis_port = '127.0.0.1'
 redis_port = 6379
 redis_DB = 0
-redis_passwprd = 'test123456'
+redis_password = 'test123456'
 # 参数替换，获取key
 PATTERN = '\$\{(.*?)\}'

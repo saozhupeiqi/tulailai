@@ -11,7 +11,7 @@ from lib.HTMLTestReportCN import HTMLTestRunner as hr1
 from lib.HTMLTestReportCN import HTMLTestRunner as hr2
 import time
 suit = unittest.defaultTestLoader.discover(TESTCASE_PATH, pattern='test_*.py')
-print(suit)
+#print(suit)
 if __name__ == "__main__":
     now = time.strftime("%Y-%M-%D-%H-%M-%S")#获取当前时间，并指定输出格式
     #创建报告文件

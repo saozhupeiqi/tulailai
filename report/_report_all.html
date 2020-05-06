@@ -123,9 +123,9 @@ function html_escape(s) {
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">赖韵的测试报告</h1>
 <p class='attribute'><strong>测试人员 : </strong> 赖韵</p>
-<p class='attribute'><strong>开始时间 : </strong> 2020-04-26 14:42:19</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.000509</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 6，通过 3，错误 3，通过率= 50.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2020-05-06 20:19:36</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:00</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 1，错误 1，通过率= 0.00%</p>
 
 <p class='description'>测试报告可以访问服务器查看，地址：http://101.201.146.42:8081/</p>
 </div>
@@ -133,10 +133,10 @@ function html_escape(s) {
 
 
 <p id='show_detail_line'>
-<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 50.00% }</a>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 0.00% }</a>
 <a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
-<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 3 }</a>
-<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 6 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 1 }</a>
 </p>
 <table id='result_table' class="table table-condensed table-bordered table-hover">
 <colgroup>
@@ -158,15 +158,15 @@ function html_escape(s) {
 
 <tr class='errorClass warning'>
     <td>unittest.loader._FailedTest</td>
-    <td class="text-center">3</td>
+    <td class="text-center">1</td>
     <td class="text-center">0</td>
     <td class="text-center">0</td>
-    <td class="text-center">3</td>
-    <td class="text-center"><a href="javascript:showClassDetail('c1',3)" class="detail" id='c1'>详细</a></td>
+    <td class="text-center">1</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',1)" class="detail" id='c1'>详细</a></td>
 </tr>
 
 <tr id='ft1_1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_add_user</div></td>
+    <td class='errorCase'><div class='testcase'>test_cases</div></td>
     <td colspan='5' align='center'>
     <!--默认收起错误信息 -Findyou
     <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
@@ -177,158 +177,22 @@ function html_escape(s) {
     <div id='div_ft1_1' class="collapse in">
     <pre>
     
-ft1_1: ImportError: Failed to import test module: test_add_user
+ft1_1: ImportError: Failed to import test module: test_cases
 Traceback (most recent call last):
   File "D:\python\lib\unittest\loader.py", line 436, in _find_test_path
     module = self._get_module_from_name(name)
   File "D:\python\lib\unittest\loader.py", line 377, in _get_module_from_name
     __import__(name)
-  File "D:\PyDemo\tulailai\test_case\test_add_user.py", line 9, in &lt;module&gt;
-    from lib import logger
-  File "D:\PyDemo\tulailai\lib\logger.py", line 31, in &lt;module&gt;
-    logger = Logger()
-  File "D:\PyDemo\tulailai\lib\logger.py", line 12, in __new__
-    cls.__instance = object.__new__()
-TypeError: object.__new__(): not enough arguments
+  File "D:\PyDemo\tulailai\test_case\test_cases.py", line 14, in &lt;module&gt;
+    class MyRequest(unittest.TestCase):
+  File "D:\PyDemo\tulailai\test_case\test_cases.py", line 15, in MyRequest
+    test_datas = read_excel(SHEET_NAME)
+  File "D:\PyDemo\tulailai\lib\read_excel.py", line 15, in read_excel
+    workbook = xlrd.open_workbook(excel_path)  # 打开文件
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 111, in open_workbook
+    with open(filename, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\PyDemo\\tulailai\\data\\test_case.xlsx'
 
-
-
-    </pre>
-    </div>
-    </td>
-</tr>
-
-<tr id='ft1_2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_delete_user</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 -Findyou
-    <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_2'>错误</button>
-    <div id='div_ft1_2' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_2'>错误</button>
-    <div id='div_ft1_2' class="collapse in">
-    <pre>
-    
-ft1_2: ImportError: Failed to import test module: test_delete_user
-Traceback (most recent call last):
-  File "D:\python\lib\unittest\loader.py", line 436, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "D:\python\lib\unittest\loader.py", line 377, in _get_module_from_name
-    __import__(name)
-  File "D:\PyDemo\tulailai\test_case\test_delete_user.py", line 9, in &lt;module&gt;
-    from lib import logger
-  File "D:\PyDemo\tulailai\lib\logger.py", line 31, in &lt;module&gt;
-    logger = Logger()
-  File "D:\PyDemo\tulailai\lib\logger.py", line 12, in __new__
-    cls.__instance = object.__new__()
-TypeError: object.__new__(): not enough arguments
-
-
-
-    </pre>
-    </div>
-    </td>
-</tr>
-
-<tr id='ft1_3' class='none'>
-    <td class='errorCase'><div class='testcase'>test_login</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 -Findyou
-    <button id='btn_ft1_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_3'>错误</button>
-    <div id='div_ft1_3' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_ft1_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_3'>错误</button>
-    <div id='div_ft1_3' class="collapse in">
-    <pre>
-    
-ft1_3: ImportError: Failed to import test module: test_login
-Traceback (most recent call last):
-  File "D:\python\lib\unittest\loader.py", line 436, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "D:\python\lib\unittest\loader.py", line 377, in _get_module_from_name
-    __import__(name)
-  File "D:\PyDemo\tulailai\test_case\test_login.py", line 7, in &lt;module&gt;
-    from lib import logger
-  File "D:\PyDemo\tulailai\lib\logger.py", line 31, in &lt;module&gt;
-    logger = Logger()
-  File "D:\PyDemo\tulailai\lib\logger.py", line 12, in __new__
-    cls.__instance = object.__new__()
-TypeError: object.__new__(): not enough arguments
-
-
-
-    </pre>
-    </div>
-    </td>
-</tr>
-
-<tr class='passClass warning'>
-    <td>test_register.UserReg</td>
-    <td class="text-center">3</td>
-    <td class="text-center">3</td>
-    <td class="text-center">0</td>
-    <td class="text-center">0</td>
-    <td class="text-center"><a href="javascript:showClassDetail('c2',3)" class="detail" id='c2'>详细</a></td>
-</tr>
-
-<tr id='pt2_1' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_user_reg_exsit: 用户已存在</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 -Findyou
-    <button id='btn_pt2_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_1'>通过</button>
-    <div id='div_pt2_1' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_pt2_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_1'>通过</button>
-    <div id='div_pt2_1' class="collapse in">
-    <pre>
-    
-pt2_1: ...测试用例开始执行...
-...测试用例执行完成...
-
-
-    </pre>
-    </div>
-    </td>
-</tr>
-
-<tr id='pt2_2' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_user_reg_no_phone: 手机号为空</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 -Findyou
-    <button id='btn_pt2_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_2'>通过</button>
-    <div id='div_pt2_2' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_pt2_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_2'>通过</button>
-    <div id='div_pt2_2' class="collapse in">
-    <pre>
-    
-pt2_2: ...测试用例开始执行...
-...测试用例执行完成...
-
-
-    </pre>
-    </div>
-    </td>
-</tr>
-
-<tr id='pt2_3' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_user_reg_ok: 注册成功</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 -Findyou
-    <button id='btn_pt2_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_3'>通过</button>
-    <div id='div_pt2_3' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_pt2_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_3'>通过</button>
-    <div id='div_pt2_3' class="collapse in">
-    <pre>
-    
-pt2_3: ...测试用例开始执行...
-...测试用例执行完成...
 
 
     </pre>
@@ -338,11 +202,11 @@ pt2_3: ...测试用例开始执行...
 
 <tr id='total_row' class="text-center active">
     <td>总计</td>
-    <td>6</td>
-    <td>3</td>
+    <td>1</td>
     <td>0</td>
-    <td>3</td>
-    <td>通过率：50.00%</td>
+    <td>0</td>
+    <td>1</td>
+    <td>通过率：0.00%</td>
 </tr>
 </table>
 
